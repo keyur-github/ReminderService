@@ -16,10 +16,12 @@ class TicketRepository {
 
     async create(data) {
         try {
+            // console.log(data);
             const ticket = await NotificationTicket.create(data);
             return ticket;
         } 
         catch (error) {
+            console.log(error);
             console.log("Something went wrong in Ticket repository create function");    
             throw error;
         }
